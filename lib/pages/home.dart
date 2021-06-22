@@ -65,23 +65,23 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void updateImageList() {
-    Process.run('docker', ['images', '--format', '"{{json .}}"'],
-            runInShell: true)
-        .then((rs) {
-      // print(rs.exitCode);
-      // print(rs.stdout);
-      // print(rs.stderr);
-      final result = rs.stdout;
-      final List<String> list1 = result.split("\n");
-      final list2 = list1.where((element) => element.isNotEmpty).toList();
-      setState(() {
-        images = list2
-            .map<Map>((e) => jsonDecode(e.substring(1, e.length - 1)))
-            .toList();
-      });
-      // print(images.join(" "));
+  void updateImageList() async {
+    final processResult = await Process.run(
+        'docker', ['images', '--format', '"{{json .}}"'],
+        runInShell: true);
+    // print(rs.exitCode);
+    // print(rs.stdout);
+    // print(rs.stderr);
+    final result = processResult.stdout;
+
+    final List<String> list1 = result.split("\n");
+    final list2 = list1.where((element) => element.isNotEmpty).toList();
+    setState(() {
+      images = list2
+          .map<Map>((e) => jsonDecode(e.substring(1, e.length - 1)))
+          .toList();
     });
+    // print(images.join(" "));
   }
 
   void cleanSystem() async {
