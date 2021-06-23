@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:system_call_test/utils/dialogs/loadingDialog/showLoadingDialog.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -65,14 +66,25 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void updateImageList() async {
-    final processResult = await Process.run(
-        'docker', ['images', '--format', '"{{json .}}"'],
-        runInShell: true);
+  Future<bool> loading(Function toDo) async {
+    showLoadingDialog(context);
+    await toDo();
+    Get.back();
+    return true;
+  }
+
+  Future<dynamic> updateImageList() async {
+    ProcessResult? processResult;
+
+    await loading(() async {
+      processResult = await Process.run(
+          'docker', ['images', '--format', '"{{json .}}"'],
+          runInShell: true);
+    });
     // print(rs.exitCode);
     // print(rs.stdout);
     // print(rs.stderr);
-    final result = processResult.stdout;
+    final result = processResult!.stdout;
 
     final List<String> list1 = result.split("\n");
     final list2 = list1.where((element) => element.isNotEmpty).toList();
