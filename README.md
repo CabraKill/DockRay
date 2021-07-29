@@ -17,6 +17,7 @@ Until there is a stable/official cross-platform docker lib to use, it shall be h
 <image src="README/work_in_progress.jpg" width= 200>
 
 - [x] List available containers
+- [x] Prune docker system
 - [ ] Update loading screen (**DOING**)
 - [ ] Add yaru theme for linux
 - [ ] Add grid layoyt
