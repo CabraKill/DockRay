@@ -1,9 +1,16 @@
-# system_call_test
+# DockRay
+A docker manager with soft use.
 
-A new Flutter project.
 
-## Enable desktop
-flutter config --enable-linux-desktop
+![](README/main_window.png)
+
+
+# Docker
+Install docker and congfigure non-sudo execution for docker CLI.
 
 ## TODO:
-* Use yaru theme
+<image src="README/work_in_progress.jpg" width= 200>
+
+- [ ] Add yaru theme for linux
+- [ ] Add grid layoyt
+- [ ] Add running containers viw
