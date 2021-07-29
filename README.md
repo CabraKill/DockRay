@@ -5,7 +5,7 @@ A docker manager with soft use.
 ![](README/main_window.png)
 
 
-# Docker
+## Docker
 Install docker and congfigure non-sudo execution for docker CLI.
 
 ## TODO:
