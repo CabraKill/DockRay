@@ -8,9 +8,16 @@ A docker manager with soft use.
 ## Docker
 Install docker and congfigure non-sudo execution for docker CLI.
 
+## How does it work ?
+DockRay calls docker CLI to get container's info and run actions.
+
+Until there is a stable/official cross-platform docker lib to use, it shall be how it works. 
+
 ## TODO:
 <image src="README/work_in_progress.jpg" width= 200>
 
+- [x] List available containers
+- [ ] Update loading screen (**DOING**)
 - [ ] Add yaru theme for linux
 - [ ] Add grid layoyt
 - [ ] Add running containers viw
