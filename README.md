@@ -4,6 +4,9 @@ A docker manager with soft use.
 
 ![](README/main_window.png)
 
+# Powered by *Flutter* 💙
+Flutter enables cross-platform code, which helps achieve more users and write less code.
+Seems perfect, right? It mighty be.
 
 ## Docker
 Install docker and congfigure non-sudo execution for docker CLI.
