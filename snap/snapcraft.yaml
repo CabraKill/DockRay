@@ -11,7 +11,7 @@ slots:
   dbus-dockray: # adjust accordingly to your app name
     interface: dbus
     bus: session
-    name: org.bar.dockray # adjust accordingly to your app name and
+    name: com.raph.dockray # adjust accordingly to your app name and
     
 apps:
   dockray:
