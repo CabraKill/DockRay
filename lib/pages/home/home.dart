@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:dockray/utils/dialogs/loadingDialog/showLoadingDialog.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:system_call_test/utils/dialogs/loadingDialog/showLoadingDialog.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

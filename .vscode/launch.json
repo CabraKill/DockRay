@@ -12,12 +12,12 @@
             "deviceId": "linux"
         },
         {
-            "name": "system_call_test",
+            "name": "dockray",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "system_call_test (profile mode)",
+            "name": "dockray (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"

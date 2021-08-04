@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project(runner LANGUAGES CXX)
 
-set(BINARY_NAME "system_call_test")
-set(APPLICATION_ID "com.example.system_call_test")
+set(BINARY_NAME "dockray")
+set(APPLICATION_ID "com.raph.dockray")
 
 cmake_policy(SET CMP0063 NEW)
 

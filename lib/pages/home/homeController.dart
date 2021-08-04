@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:system_call_test/pages/home/widgets/layoutFloatingButton.dart';
+import 'widgets/layoutFloatingButton.dart';
 
 class _Rx {
   final layoutHome = LayoutHome.grid.obs;

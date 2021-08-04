@@ -1,5 +1,5 @@
+import 'package:dockray/pages/home/homeController.dart';
 import 'package:get/get.dart';
-import 'package:system_call_test/pages/home/homeController.dart';
 
 class HomeBinding implements Bindings {
   @override

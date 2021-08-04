@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.system_call_test">
+    package="com.raph.dockray">
    <application
-        android:label="system_call_test"
+        android:label="dockray"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
