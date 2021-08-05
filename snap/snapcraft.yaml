@@ -16,7 +16,7 @@ slots:
 apps:
   dockray:
     command: dockray
-    extensions: [flutter-master] # Where "master" defines which Flutter channel to use for the build
+    extensions: [flutter-stable] # Where "master" defines which Flutter channel to use for the build
     plugs:
     - network
     slots:
