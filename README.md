@@ -1,3 +1,5 @@
+<img src="https://img.shields.io/badge/snapcraft--action-Released-brightgreen">
+
 # DockRay
 A docker manager with soft use.
 
