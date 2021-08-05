@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:dockray/utils/dialogs/error/showErrorDialog.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'widgets/layoutFloatingButton.dart';
@@ -26,22 +27,26 @@ class HomeController extends GetxController {
   }
 
   Future<dynamic> updateImageList() async {
-    late ProcessResult processResult;
+    try {
+      late ProcessResult processResult;
 
-    processResult = await Process.run(
-        'docker', ['images', '--format', '"{{json .}}"'],
-        runInShell: true);
-    // print(rs.exitCode);
-    // print(rs.stdout);
-    // print(rs.stderr);
-    final result = processResult.stdout;
+      processResult = await Process.run(
+          'docker', ['images', '--format', '"{{json .}}"'],
+          runInShell: true);
+      // print(rs.exitCode);
+      // print(rs.stdout);
+      // print(rs.stderr);
+      final result = processResult.stdout;
 
-    final List<String> list1 = result.split("\n");
-    final list2 = list1.where((element) => element.isNotEmpty).toList();
-    _rx.imageList.value = list2
-        .map<Map>((e) => jsonDecode(e.substring(1, e.length - 1)))
-        .toList();
-    // print(images.join(" "));
+      final List<String> list1 = result.split("\n");
+      final list2 = list1.where((element) => element.isNotEmpty).toList();
+      _rx.imageList.value = list2
+          .map<Map>((e) => jsonDecode(e.substring(1, e.length - 1)))
+          .toList();
+      // print(images.join(" "));
+    } catch (e) {
+      showErrorDialog(e.toString());
+    }
   }
 
   void cleanSystem() async {

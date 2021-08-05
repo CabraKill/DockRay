@@ -1,3 +1,5 @@
+<img src="https://img.shields.io/badge/snapcraft--action-Released-brightgreen">
+
 # DockRay
 A docker manager with soft use.
 
@@ -21,7 +23,9 @@ Until there is a stable/official cross-platform docker lib to use, it shall be h
 
 - [x] List available containers
 - [x] Prune docker system
+- [x] Add yaru theme for linux
 - [ ] Update loading screen (**DOING**)
-- [ ] Add yaru theme for linux
 - [ ] Add grid layoyt
 - [ ] Add running containers viw
+- [ ] Add language translation support
+ 
