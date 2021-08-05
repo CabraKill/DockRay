@@ -29,9 +29,9 @@ class HomeController extends GetxController {
   Future<dynamic> updateImageList() async {
     try {
       late ProcessResult processResult;
-
-      processResult = await Process.run(
-          'docker', ['images', '--format', '"{{json .}}"'],
+      print("Process initied");
+      processResult = Process.runSync(
+          "docker", ["images", "--format", '"{{json .}}"'],
           runInShell: true);
       // print(rs.exitCode);
       // print(rs.stdout);
@@ -44,6 +44,7 @@ class HomeController extends GetxController {
           .map<Map>((e) => jsonDecode(e.substring(1, e.length - 1)))
           .toList();
       // print(images.join(" "));
+      print("Process ended");
     } catch (e) {
       showErrorDialog(e.toString());
     }
@@ -51,13 +52,26 @@ class HomeController extends GetxController {
 
   void cleanSystem() async {
     try {
-      await Process.run("docker", ["system", "prune", "-f"]);
+      await Process.run("docker", ["system", "prune", "-f"], runInShell: true);
       ScaffoldMessenger.of(Get.context!)
           .showSnackBar(SnackBar(content: Text('System cleaned 🚩')));
     } catch (e) {
+      print(e.toString());
       ScaffoldMessenger.of(Get.context!).showSnackBar(
           SnackBar(content: Text('Something is quite wrong... 🐞')));
     }
     updateImageList();
+  }
+
+  Future<void> test() async {
+    try {
+      late ProcessResult processResult;
+      print("Process initied");
+      processResult = Process.runSync("cal", [], runInShell: true);
+      print(processResult.stdout);
+      print("Process ended");
+    } catch (e) {
+      showErrorDialog(e.toString());
+    }
   }
 }

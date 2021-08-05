@@ -15,6 +15,8 @@ class HomePage extends GetView<HomeController> {
                 icon: Icon(Icons.update)),
             IconButton(
                 onPressed: controller.cleanSystem, icon: Icon(Icons.delete)),
+            IconButton(
+                onPressed: controller.test, icon: Icon(Icons.bug_report)),
           ],
         ),
         body: Padding(

@@ -3,7 +3,7 @@ version: 0.0.1
 summary: Docker manager.
 description: A docker manager with soft use.
 
-confinement: strict
+confinement: devmode
 base: core18
 grade: stable
 
