@@ -27,3 +27,5 @@ Until there is a stable/official cross-platform docker lib to use, it shall be h
 - [ ] Update loading screen (**DOING**)
 - [ ] Add grid layoyt
 - [ ] Add running containers viw
+- [ ] Add language translation support
+ 
