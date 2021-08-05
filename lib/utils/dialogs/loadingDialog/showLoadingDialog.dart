@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'loadingDialog.dart';
 
-Future<void> showLoadingDialog(context) async {
-  return showDialog<void>(
-      context: context,
-      builder: (context) => AlertDialog(content: LoadingDialog()),
+Future<void> showLoadingDialog() async {
+  return Get.dialog(AlertDialog(content: LoadingDialog()),
       barrierDismissible: true);
 }
