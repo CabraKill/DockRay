@@ -23,7 +23,7 @@ Until there is a stable/official cross-platform docker lib to use, it shall be h
 
 - [x] List available containers
 - [x] Prune docker system
+- [x] Add yaru theme for linux
 - [ ] Update loading screen (**DOING**)
-- [ ] Add yaru theme for linux
 - [ ] Add grid layoyt
 - [ ] Add running containers viw
