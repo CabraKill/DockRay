@@ -31,12 +31,15 @@ class HomeController extends GetxController {
       late ProcessResult processResult;
       print("Process initied");
       processResult = Process.runSync(
-          "docker", ["images", "--format", '"{{json .}}"'],
+          "dockray-docker", ["images", "--format", '"{{json .}}"'],
           runInShell: true);
       // print(rs.exitCode);
       // print(rs.stdout);
       // print(rs.stderr);
       final result = processResult.stdout;
+      final status = processResult.exitCode;
+      final error = processResult.stderr;
+      print("output: $result | exit: $status | error: $error");
 
       final List<String> list1 = result.split("\n");
       final list2 = list1.where((element) => element.isNotEmpty).toList();
@@ -52,7 +55,13 @@ class HomeController extends GetxController {
 
   void cleanSystem() async {
     try {
-      await Process.run("docker", ["system", "prune", "-f"], runInShell: true);
+      final processResult = await Process.run(
+          "dockray-docker", ["system", "prune", "-f"],
+          runInShell: true);
+      final result = processResult.stdout;
+      final status = processResult.exitCode;
+      final error = processResult.stderr;
+      print("output: $result | exit: $status | error: $error");
       ScaffoldMessenger.of(Get.context!)
           .showSnackBar(SnackBar(content: Text('System cleaned 🚩')));
     } catch (e) {
@@ -67,8 +76,12 @@ class HomeController extends GetxController {
     try {
       late ProcessResult processResult;
       print("Process initied");
-      processResult = Process.runSync("cal", [], runInShell: true);
-      print(processResult.stdout);
+      processResult =
+          Process.runSync('which', ['dockray-docker'], runInShell: true);
+      final result = processResult.stdout;
+      final status = processResult.exitCode;
+      final error = processResult.stderr;
+      print("output: $result | exit: $status | error: $error");
       print("Process ended");
     } catch (e) {
       showErrorDialog(e.toString());
