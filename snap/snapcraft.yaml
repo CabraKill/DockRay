@@ -29,7 +29,7 @@ apps:
     slots:
       - dbus-dockray
   dockray-docker:
-    command: sh $SNAP/bin/dockray-docker
+    command: $SNAP/bin/dockray-docker
     plugs:
     - docker
 
