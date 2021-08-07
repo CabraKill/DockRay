@@ -3,6 +3,10 @@ version: 0.0.1
 summary: Docker manager.
 description: A docker manager with soft use.
 
+architectures:
+  - build-on: [amd64, arm64]
+    run-on: [amd64, arm64]
+
 confinement: strict
 base: core18
 grade: stable
