@@ -1,0 +1,3 @@
+#!/bin/bash -e
+
+$SNAP/docker-snap/bin/docker "$@"

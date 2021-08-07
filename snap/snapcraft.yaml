@@ -12,18 +12,33 @@ slots:
     interface: dbus
     bus: session
     name: com.raph.dockray # adjust accordingly to your app name and
-    
+
+plugs:
+  docker-executables:
+    interface: content
+    target: $SNAP/docker-snap
+    default-provider: docker
+
 apps:
   dockray:
     command: dockray
     extensions: [flutter-stable] # Where "master" defines which Flutter channel to use for the build
     plugs:
-    - docker
     - network
+    - docker
     slots:
       - dbus-dockray
+  dockray-docker:
+    command: sh $SNAP/bin/dockray-docker
+    plugs:
+    - docker
+
 parts:
   dockray:
     source: .
     plugin: flutter
     flutter-target: lib/main.dart # The main entry-point file of the application
+  dockray-docker:
+    plugin: dump
+    prime: ["bin/dockray-docker"]
+    source: .
