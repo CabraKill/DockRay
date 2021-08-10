@@ -1,10 +1,12 @@
-<img src="https://img.shields.io/badge/snapcraft--action-Released-brightgreen">
+<img src="https://img.shields.io/badge/snapcraft--action-Released-brightgreen"> <img src="https://img.shields.io/badge/snap-beta-blueviolet">
 
 # DockRay
 A docker manager with soft use.
 
 
 ![](README/main_window.png)
+
+[<img src="README/[EN]-snap-store-black-uneditable.png">](https://snapcraft.io/dockray)
 
 # Powered by *Flutter* 💙
 Flutter enables cross-platform code, which helps achieve more users and write less code.
