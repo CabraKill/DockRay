@@ -6,7 +6,8 @@ A docker manager with soft use.
 
 ![](README/main_window.png)
 
-[<img src="README/[EN]-snap-store-black-uneditable.png">](https://snapcraft.io/dockray)
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/dockray)
 
 # Powered by *Flutter* 💙
 Flutter enables cross-platform code, which helps achieve more users and write less code.
