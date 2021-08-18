@@ -1,5 +1,5 @@
-import 'dart:convert';
 import 'dart:io';
+import 'package:dockray/docker/repository/dockerRepository.dart';
 import 'package:dockray/utils/dialogs/error/showErrorDialog.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,7 +11,6 @@ class _Rx {
 }
 
 class HomeController extends GetxController {
-// final MyRepository repository;
   void changeLayout() {}
 
   final _rx = _Rx();
@@ -28,26 +27,7 @@ class HomeController extends GetxController {
 
   Future<dynamic> updateImageList() async {
     try {
-      late ProcessResult processResult;
-      print("Process initied");
-      processResult = Process.runSync(
-          "dockray-docker", ["images", "--format", '"{{json .}}"'],
-          runInShell: true);
-      // print(rs.exitCode);
-      // print(rs.stdout);
-      // print(rs.stderr);
-      final result = processResult.stdout;
-      final status = processResult.exitCode;
-      final error = processResult.stderr;
-      print("output: $result | exit: $status | error: $error");
-
-      final List<String> list1 = result.split("\n");
-      final list2 = list1.where((element) => element.isNotEmpty).toList();
-      _rx.imageList.value = list2
-          .map<Map>((e) => jsonDecode(e.substring(1, e.length - 1)))
-          .toList();
-      // print(images.join(" "));
-      print("Process ended");
+      _rx.imageList.value = Get.find<DockerRepository>().getImages();
     } catch (e) {
       showErrorDialog(e.toString());
     }
