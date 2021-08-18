@@ -12,11 +12,6 @@
             "deviceId": "linux"
         },
         {
-            "name": "dockray",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
             "name": "dockray (profile mode)",
             "request": "launch",
             "type": "dart",
