@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'homeController.dart';
 
 class HomePage extends GetView<HomeController> {
+  static const routeName = '/home';
   @override
   Widget build(BuildContext context) {
     return Obx(
