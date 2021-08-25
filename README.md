@@ -7,7 +7,12 @@ A docker manager with soft use.
 ![](README/main_window.png)
 
 
+# Snap
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/dockray)
+
+Currently on the process to get some permissions regardless docker use.
+
+Feel free to see the forum with it status: [snapcraft](https://forum.snapcraft.io/t/request-for-docker-interface-for-dockray/25981/3)
 
 # Powered by *Flutter* 💙
 Flutter enables cross-platform code, which helps achieve more users and write less code.
