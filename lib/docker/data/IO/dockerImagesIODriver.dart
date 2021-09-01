@@ -8,7 +8,6 @@ class DockerImagesIODriver implements IDockerImagesDriver {
   getImages() {
     late ProcessResult processResult;
     print("Process initied");
-    //dockray-docker
     processResult = Process.runSync(
         "docker", ["images", "--format", '"{{json .}}"'],
         runInShell: true);

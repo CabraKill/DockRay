@@ -36,7 +36,7 @@ class HomeController extends GetxController {
   void cleanSystem() async {
     try {
       final processResult = await Process.run(
-          "dockray-docker", ["system", "prune", "-f"],
+          "docker", ["system", "prune", "-f"],
           runInShell: true);
       final result = processResult.stdout;
       final status = processResult.exitCode;
@@ -56,8 +56,7 @@ class HomeController extends GetxController {
     try {
       late ProcessResult processResult;
       print("Process initied");
-      processResult =
-          Process.runSync('which', ['dockray-docker'], runInShell: true);
+      processResult = Process.runSync('which', ['docker'], runInShell: true);
       final result = processResult.stdout;
       final status = processResult.exitCode;
       final error = processResult.stderr;

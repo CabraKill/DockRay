@@ -32,8 +32,8 @@ apps:
     - docker
     slots:
       - dbus-dockray
-  dockray-docker:
-    command: $SNAP/bin/dockray-docker
+  docker:
+    command: $SNAP/bin/docker
     plugs:
     - docker
 
@@ -42,7 +42,7 @@ parts:
     source: .
     plugin: flutter
     flutter-target: lib/main.dart # The main entry-point file of the application
-  dockray-docker:
+  docker:
     plugin: dump
-    prime: ["bin/dockray-docker"]
+    prime: ["bin/docker"]
     source: .
