@@ -1,0 +1,3 @@
+Supported links:
+https://github.com/anonymouse64/docker-snap-usage-example
+https://forum.snapcraft.io/t/snap-that-deploy-a-docker-image/12536/4
